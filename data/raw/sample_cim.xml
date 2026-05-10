@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Synthetic CIM/XML dataset — IEC 61970 CGMES format
+  Utility: Ridgeline Power Grid (fictional)
+  Region:  Appalachian Highlands (fictional)
+
+  All substation names, IDs, and parameters are synthetic.
+  No real utility network data is represented.
+-->
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:cim="http://iec.ch/TC57/2013/CIM-schema-cim16#"
+  xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#">
+
+  <!-- ── Geographical Region ─────────────────────────────────────── -->
+  <cim:GeographicalRegion rdf:ID="REGION_AH">
+    <cim:IdentifiedObject.name>Appalachian Highlands Region</cim:IdentifiedObject.name>
+  </cim:GeographicalRegion>
+
+  <!-- ── Base Voltages ───────────────────────────────────────────── -->
+  <cim:BaseVoltage rdf:ID="BV_500KV">
+    <cim:IdentifiedObject.name>500kV</cim:IdentifiedObject.name>
+    <cim:BaseVoltage.nominalVoltage>500</cim:BaseVoltage.nominalVoltage>
+  </cim:BaseVoltage>
+
+  <cim:BaseVoltage rdf:ID="BV_345KV">
+    <cim:IdentifiedObject.name>345kV</cim:IdentifiedObject.name>
+    <cim:BaseVoltage.nominalVoltage>345</cim:BaseVoltage.nominalVoltage>
+  </cim:BaseVoltage>
+
+  <cim:BaseVoltage rdf:ID="BV_138KV">
+    <cim:IdentifiedObject.name>138kV</cim:IdentifiedObject.name>
+    <cim:BaseVoltage.nominalVoltage>138</cim:BaseVoltage.nominalVoltage>
+  </cim:BaseVoltage>
+
+  <cim:BaseVoltage rdf:ID="BV_69KV">
+    <cim:IdentifiedObject.name>69kV</cim:IdentifiedObject.name>
+    <cim:BaseVoltage.nominalVoltage>69</cim:BaseVoltage.nominalVoltage>
+  </cim:BaseVoltage>
+
+  <!-- ── Substations (no geo-coordinates — to be enriched) ──────── -->
+
+  <cim:Substation rdf:ID="SUB_001">
+    <cim:IdentifiedObject.name>Ridgeline - Maplewood North Substation</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>500/345kV EHV switching substation, northern hub</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <cim:Substation rdf:ID="SUB_002">
+    <cim:IdentifiedObject.name>Ridgeline - Cedarville Junction Substation</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>345kV transmission substation, western corridor</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <cim:Substation rdf:ID="SUB_003">
+    <cim:IdentifiedObject.name>Ridgeline - Ironbridge 138kV Sub</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>138kV distribution feed substation</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <cim:Substation rdf:ID="SUB_004">
+    <cim:IdentifiedObject.name>Ridgeline - Pineridge East SS</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>138kV ring-bus substation, eastern loop</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <cim:Substation rdf:ID="SUB_005">
+    <cim:IdentifiedObject.name>Ridgeline - Stonefield 69kV Station</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>69kV step-down substation serving Stonefield load centre</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <cim:Substation rdf:ID="SUB_006">
+    <cim:IdentifiedObject.name>Ridgeline - Ashford Creek 345kV</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>345kV import terminal, southern interconnect</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <cim:Substation rdf:ID="SUB_007">
+    <cim:IdentifiedObject.name>Ridgeline - Brookhaven Sub</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>138kV urban substation</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <cim:Substation rdf:ID="SUB_008">
+    <cim:IdentifiedObject.name>Ridgeline - Fairmont North 500kV</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>500kV bulk transmission terminal, northern grid entry</cim:IdentifiedObject.description>
+    <cim:Substation.Region rdf:resource="#REGION_AH"/>
+  </cim:Substation>
+
+  <!-- ── Voltage Levels ─────────────────────────────────────────── -->
+  <cim:VoltageLevel rdf:ID="VL_SUB001_500">
+    <cim:IdentifiedObject.name>SUB_001 500kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_001"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_500KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB001_345">
+    <cim:IdentifiedObject.name>SUB_001 345kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_001"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_345KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB002_345">
+    <cim:IdentifiedObject.name>SUB_002 345kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_002"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_345KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB003_138">
+    <cim:IdentifiedObject.name>SUB_003 138kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_003"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_138KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB004_138">
+    <cim:IdentifiedObject.name>SUB_004 138kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_004"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_138KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB005_69">
+    <cim:IdentifiedObject.name>SUB_005 69kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_005"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_69KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB006_345">
+    <cim:IdentifiedObject.name>SUB_006 345kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_006"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_345KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB007_138">
+    <cim:IdentifiedObject.name>SUB_007 138kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_007"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_138KV"/>
+  </cim:VoltageLevel>
+
+  <cim:VoltageLevel rdf:ID="VL_SUB008_500">
+    <cim:IdentifiedObject.name>SUB_008 500kV Bus</cim:IdentifiedObject.name>
+    <cim:VoltageLevel.Substation rdf:resource="#SUB_008"/>
+    <cim:VoltageLevel.BaseVoltage rdf:resource="#BV_500KV"/>
+  </cim:VoltageLevel>
+
+  <!-- ── ACLineSegments ─────────────────────────────────────────── -->
+  <cim:ACLineSegment rdf:ID="LINE_001">
+    <cim:IdentifiedObject.name>Maplewood-Cedarville 345kV Line</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>345kV double-circuit ACSR Drake, 58.4 km</cim:IdentifiedObject.description>
+    <cim:ConductingEquipment.BaseVoltage rdf:resource="#BV_345KV"/>
+    <cim:Conductor.length>58.4</cim:Conductor.length>
+    <cim:ACLineSegment.r>0.0401</cim:ACLineSegment.r>
+    <cim:ACLineSegment.x>0.3612</cim:ACLineSegment.x>
+    <cim:ACLineSegment.bch>0.00391</cim:ACLineSegment.bch>
+  </cim:ACLineSegment>
+
+  <cim:ACLineSegment rdf:ID="LINE_002">
+    <cim:IdentifiedObject.name>Ironbridge-Pineridge 138kV Line</cim:IdentifiedObject.name>
+    <cim:IdentifiedObject.description>138kV single-circuit, 31.2 km</cim:IdentifiedObject.description>
+    <cim:ConductingEquipment.BaseVoltage rdf:resource="#BV_138KV"/>
+    <cim:Conductor.length>31.2</cim:Conductor.length>
+    <cim:ACLineSegment.r>0.0521</cim:ACLineSegment.r>
+    <cim:ACLineSegment.x>0.4103</cim:ACLineSegment.x>
+    <cim:ACLineSegment.bch>0.00312</cim:ACLineSegment.bch>
+  </cim:ACLineSegment>
+
+</rdf:RDF>

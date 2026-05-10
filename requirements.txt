@@ -1,0 +1,8 @@
+rdflib==7.0.0
+rapidfuzz==3.9.3
+pandas==2.3.3
+folium==0.17.0
+streamlit==1.37.0
+streamlit-folium==0.22.0
+pytest==8.3.2
+pytest-cov==5.0.0
