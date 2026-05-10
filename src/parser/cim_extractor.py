@@ -6,7 +6,6 @@ primary voltage levels, ready for GIS matching.
 
 from rdflib import Graph, Namespace, RDF
 from dataclasses import dataclass
-from typing import Optional
 import logging
 import pandas as pd
 
@@ -19,8 +18,8 @@ class SubstationRecord:
     sub_id:      str
     sub_name:    str
     description: str
-    voltage_kv:  Optional[float]
-    region:      Optional[str]
+    voltage_kv:  float | None
+    region:      str | None
     has_location: bool = False
 
 
@@ -28,7 +27,7 @@ def _short(uri: str) -> str:
     return uri.split("#")[-1] if "#" in uri else uri.split("/")[-1]
 
 
-def _val(graph: Graph, subj, prop: str) -> Optional[str]:
+def _val(graph: Graph, subj, prop: str) -> str | None:
     v = graph.value(subj, CIM[prop])
     return str(v) if v else None
 
