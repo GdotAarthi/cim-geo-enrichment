@@ -7,7 +7,6 @@ with voltage level as a mandatory pre-filter.
 import re
 import logging
 from dataclasses import dataclass, asdict
-from typing import Optional
 
 import pandas as pd
 from rapidfuzz import fuzz, process
@@ -42,12 +41,12 @@ class MatchResult:
     sub_id:          str
     sub_name:        str
     sub_name_clean:  str
-    voltage_kv:      Optional[float]
-    gis_id:          Optional[str]
-    station_name:    Optional[str]
-    latitude:        Optional[float]
-    longitude:       Optional[float]
-    match_score:     Optional[float]
+    voltage_kv:      float | None
+    gis_id:          str | None
+    station_name:    str | None
+    latitude:        float | None
+    longitude:       float | None
+    match_score:     float | None
     match_status:    str    # "auto" | "review" | "no_match"
     candidates_seen: int
     notes:           str = ""
