@@ -36,3 +36,9 @@ jobs:
           assert len(df) > 0, 'No substations extracted'
           print(f'OK - {len(df)} substations found')
           EOF
+
+      - name: Lint with ruff
+        shell: bash
+        run: |
+          pip install ruff
+          ruff check src/ tests/
